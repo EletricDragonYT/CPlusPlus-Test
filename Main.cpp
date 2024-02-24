@@ -1,31 +1,88 @@
 #include <iostream>
-	// #include is used to include external libraries which give addition code that can be used.
-	// When including external libraries the code within thos libraries can then be called.
+#include <algorithm>
+#include <vector>
 
-	//#include "externalFunctions.h"
-	// This gives this file access to call functions from another .cpp file by declaring that files .h file.
+#include <glfw3.h>
+#include <glad.h>
+// #include is used to include External and Internal libraries which give additional code that can be used.
+// When including External libraries, the library name is surrounded by arrows pointing outward.
+// When including Internal libraries, the library name is surrounded by single quotation marks
+// - The External libraries give full access to all code available within the library.
+// - The Internal Libraries give full access to all code available within the header file.
 
 std::string space = "\n";
-std::string option;
-	// These are global variables that can be used in all functions in this file.
+std::string input;
+char s = '"';
+// These are global variables that can be used in all functions in this file.
 
-void main() {
-	// This is the main function of this file, it is of the "void" type and has no parameters/arguments.
+float a;
+long int b;
+short int c;
+
+int d = 12;
+std::string e = "hello.";
+
+std::string incent;
+std::vector<std::string> blockName;
+int size = -1;
+
+int recfBlock() {
+
+	std::cout << "Block Name: ";	std::cin >> input;
+	blockName.push_back(input);
+	size++;
+	std::cout << "Again?\n";	std::cin >> input;
+
+	if (input == "yes") {
+
+		recfBlock();
+	}
+	else {
+
+		while (size > -1) {
+
+			std::cout << size << "\n";
+			std::cout << blockName[size] << "\n";
+			size--;
+		}
+	}
+
+	return 0;
+}
+
+int recf() {
+
+	std::cout << "Input Type: ";	std::cin >> input;
+
+	if (input == "block") {
+
+		recfBlock();
+	}
+
+	return 0;
+}
+
+int inputInit() {
+
+	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
+
+	return 0;
+}
+
+int test() {
+
+	return 0;
+}
+
+int main() {
+	// This is the main function of this file, it is of the "int" type and has no parameters/arguments.
 
 /*
-- Comments are lines inside the code which the operating system will not read when executing code.
-- This allows information to be written for humans to look out to keep track of information without the system reading it.
-- If comments are not used an error will appear as the system will try and read that information which has no syntax.
-
-- Comments are split into Single Line Comments or Multi Line Comments.
-- Single Line Comments are made using two forward slashes (//).
-- Multi Line Comments are made using a forward slash, two stars (*), and another slash (/**/					/*
--- For Multi Line Comments the comments need to be placed between the stars for it to be registered as a comment.
--- Placing a Multi Line Comment inside another will not created a sub-comment but will cause the first comment to end.
+	External Compiling and Executing via GCC.
+	- To compile c++ files from scratch inside the terminal, type the command {g++ "file_name".cpp} and enter the command.
+	- When compiling the file a name can be given to the compiled c++ code by using the command {g++ "file_name".cpp -o "new_name"}.
+	- To execute compiled files inside the terminal, the the command {./a.out "file_name"} or {./"custom_file_name"}.
 */
-
-// The ";" is required to end a line of code and allow for another.
-// Using "\n" when sending out a text a new line will be created.
 
 //----------
 
@@ -56,21 +113,37 @@ void main() {
 -- For example if the programming logic is flawed or a mistake in an if statement or a loop.
 */
 
+//----------
+
 	std::cout <<
-		"C++ files are split into .cpp files and .h/.hpp files. These are C++ and Header files respectively.\n" <<
-		"- C++ files hold code which is executed upon the file being compiled and ran.\n" <<
-		"- Header Files function lioke Internal Libraries, and allow code to be called from another C++ file.\n" <<
+		"C++ files are split into .cpp files and .h files. These are C++ and Header files respectively.\n" <<
+		"- C++ files hold code which is executed upon the file being compiled and executed.\n" <<
+		"- Header files work as Internal Libraries, and allow code to be called from one C++ file to another.\n" <<
 		space <<
-		""
+		"Comments are lines of information inside the code which is not read by the Operating System.\n" <<
+		"The comments added are not executed by the Operating System and holds info readable by the user.\n" <<
+		"Comments are split into Single Line Comments and Multi-Line Comments.\n" <<
+		"- Single Line Comments are created using two forward slashes (//) for the syntax.\n" <<
+		"- Single Line Comments hold a single line of information after the syntax.\n" <<
+		"- Multi-Line Comments are created using two forward slashes and two asterisks (/**/) for the syntax.\n" <<
+		"- Multi-Line Comments hold multiple lines of information between the asterisks on separate lines.\n" <<
+		"-- Multi-Line Comments can NOT be nested inside each other, as the syntaxes will intercept each other.\n" <<
+		"If comments are not created using the correct syntax, an error will occur.\n" <<
+		space <<
+		"When creating lines of code, the code needs a line break to tell the system when to read the next line of code.\n" <<
+		"In C++ the line break is the semi-colan (;) which is placed at the end of code.\n" <<
+		"- For example, the line of code {std::cout << " << s << "Hello World" << s << ";}\n" <<
+		"- In the above example, the code would print to the console " << s << "Hello World" << s << "\n" <<
+		"- Without the semi-colan the system would not be able to read the next line of code, causing an error.\n" <<
+		"There is another line break specifically for printing out text as a backwards slash and the letter n. \n" <<
+		"When the line break is present, any additional text printed afterwards will be placed on the next line down.\n" <<
+		"- With the last example, if the line break was added any text after {Hello World} would be printed on the next line.\n" <<
+		space;
 
-		;
+	//recf();
+	// Testing using vectors with the Mod Creator.
 
-		/*
-- C++ files are split into different files for different purposes, the main file type is a .cpp file representing c++.
-- Other file types are .h or .hpp files which are called Header files which are used to access code from another file.
+	//commands(input);
 
-- To compile c++ files from scratch inside the terminal g++ "file_name".cpp needs to be executed.
-- When compiling the file a name can be given to the compiled c++ code by using g++ "file_name".cpp -o "new_name".
-- To execute compiled files inside the terminal ./a.out "file_name" or ./"custom_file_name" needs to be executed.
-*/
+	return 0;
 }
