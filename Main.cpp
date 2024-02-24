@@ -1,9 +1,6 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-
-#include <glfw3.h>
-#include <glad.h>
 // #include is used to include External and Internal libraries which give additional code that can be used.
 // When including External libraries, the library name is surrounded by arrows pointing outward.
 // When including Internal libraries, the library name is surrounded by single quotation marks
