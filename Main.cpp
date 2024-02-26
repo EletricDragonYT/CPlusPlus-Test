@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+
+#include "Examples.h"
 // #include is used to include External and Internal libraries which give additional code that can be used.
 // When including External libraries, the library name is surrounded by arrows pointing outward.
 // When including Internal libraries, the library name is surrounded by single quotation marks
@@ -11,53 +13,6 @@ std::string space = "\n";
 std::string input;
 char s = '"';
 // These are global variables that can be used in all functions in this file.
-
-float a;
-long int b;
-short int c;
-
-int d = 12;
-std::string e = "hello.";
-
-std::string incent;
-std::vector<std::string> blockName;
-int size = -1;
-
-int recfBlock() {
-
-	std::cout << "Block Name: ";	std::cin >> input;
-	blockName.push_back(input);
-	size++;
-	std::cout << "Again?\n";	std::cin >> input;
-
-	if (input == "yes") {
-
-		recfBlock();
-	}
-	else {
-
-		while (size > -1) {
-
-			std::cout << size << "\n";
-			std::cout << blockName[size] << "\n";
-			size--;
-		}
-	}
-
-	return 0;
-}
-
-int recf() {
-
-	std::cout << "Input Type: ";	std::cin >> input;
-
-	if (input == "block") {
-
-		recfBlock();
-	}
-
-	return 0;
-}
 
 int inputInit() {
 
@@ -75,10 +30,10 @@ int main() {
 	// This is the main function of this file, it is of the "int" type and has no parameters/arguments.
 
 /*
-	External Compiling and Executing via GCC.
-	- To compile c++ files from scratch inside the terminal, type the command {g++ "file_name".cpp} and enter the command.
-	- When compiling the file a name can be given to the compiled c++ code by using the command {g++ "file_name".cpp -o "new_name"}.
-	- To execute compiled files inside the terminal, the the command {./a.out "file_name"} or {./"custom_file_name"}.
+External Compiling and Executing via GCC.
+- To compile c++ files from scratch inside the terminal, type the command {g++ "file_name".cpp} and enter the command.
+- When compiling the file a name can be given to the compiled c++ code by using the command {g++ "file_name".cpp -o "new_name"}.
+- To execute compiled files inside the terminal, the the command {./a.out "file_name"} or {./"custom_file_name"}.
 */
 
 //----------
@@ -136,11 +91,6 @@ int main() {
 		"When the line break is present, any additional text printed afterwards will be placed on the next line down.\n" <<
 		"- With the last example, if the line break was added any text after {Hello World} would be printed on the next line.\n" <<
 		space;
-
-	//recf();
-	// Testing using vectors with the Mod Creator.
-
-	//commands(input);
 
 	return 0;
 }

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 
 #include "Main.h"
 
@@ -64,9 +63,15 @@ int functions() {
 int classes() {
 
 	std::cout <<
-		"Classes are the blueprints for objects, which are simply an instance of a class.\n" <<
-		"Objects receives the characteristics of its parent class.\n" <<
-		"Codecademy says to place Classes inside a .h or .hpp file, but they seem to work in C++ files.\n" <<
+		"Classes are like functions in that they hold executable code, but is able to have a child class.\n" <<
+		"Classes have Methods which are like functions and can be called using a dot operator {.}\n" <<
+		"Attributes are class specific variables, these can be called and acted upon within the class.\n" <<
+		"- Classes can be placed within a .cpp file, but Codecademy suggests placing them in a .h or .hpp file.\n" <<
+		space <<
+		"Methods can be created outside of the class, this is done by using the class name and two semi-colons {::}\n" <<
+		"Before the method can truely be created, it needs to be declared within the class before it can be initialized.\n" <<
+		"Methods are given a type similar to functions, and have parenthesis and curly brackets like a function.\n" <<
+		space <<
 		""
 		;
 

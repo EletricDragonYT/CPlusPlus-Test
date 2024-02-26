@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "Examples.h"
+
 // Variable Examples:
 std::string a = "Hello.\n";
 char b = 'h';
@@ -221,7 +223,9 @@ public:
 	// Calls the newly created function and its .add() function.
 };
 
-class classTest {
+int classTest::buy_ingredients() {
+	// An external Method created for the classTest class.
+	// This Method increases the users ingredients.
+	ingredients++;
 
-
-};
+}
